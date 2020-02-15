@@ -15,7 +15,9 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 group :test, :development do
-  gem "standard"
+  gem "puma", "~> 4.3"
   gem "pry"
+  gem "standard"
+  gem "turbolinks", "~> 5"
   gem "webpacker", "~> 4.2.2"
 end

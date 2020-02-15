@@ -94,6 +94,8 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    puma (4.3.1)
+      nio4r (~> 2.0)
     rack (2.1.2)
     rack-proxy (0.6.5)
       rack
@@ -150,6 +152,9 @@ GEM
       rubocop-performance (~> 1.5.1)
     thor (1.0.1)
     thread_safe (0.3.6)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.1)
@@ -168,8 +173,10 @@ PLATFORMS
 DEPENDENCIES
   design_system!
   pry
+  puma (~> 4.3)
   sqlite3
   standard
+  turbolinks (~> 5)
   webpacker (~> 4.2.2)
 
 BUNDLED WITH
