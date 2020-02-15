@@ -1,5 +1,5 @@
-@import "pygments-rouge-css/github";
-@import "~bootstrap/scss/bootstrap";
+@import 'pygments-rouge-css/github';
+@import '~bootstrap/scss/bootstrap';
 
 body {
   font-size: 0.875rem;
@@ -69,12 +69,12 @@ body {
  * Content
  */
 
-[role="main"] {
+[role='main'] {
   padding-top: 133px; /* Space for fixed navbar */
 }
 
 @media (min-width: 768px) {
-  [role="main"] {
+  [role='main'] {
     padding-top: 48px; /* Space for fixed navbar */
   }
 }

@@ -1,0 +1,57 @@
+<% cache filepaths + file_timestamps do %>
+  <% all_lines = [] %>
+  <% content_for :code do %>
+    <% grouped_filepaths.each do |language, filepaths| %>
+      <details class="py-2" open>
+        <% language_lines = [] %>
+        <% content_for language do %>
+          <div>
+            <% filepaths.each do |filepath| %>
+              <% @lines = file_lines(filepath) %>
+              <% language_lines.concat @lines %>
+              <% all_lines.concat @lines %>
+              <%== render_formatted_code language, @lines.join %>
+            <% end %>
+          </div>
+        <% end %>
+        <summary>
+          <span style="min-width:75px;"><%= language_title language %></span>
+        </summary>
+        <%= content_for language %>
+      </details>
+    <% end %>
+  <% end %>
+
+  <div class="jumbotron bg-primary text-white">
+    <h1><%= @frontmatter["title"] %></h1>
+    <p class="lead"><%= @frontmatter["summary"] %></p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card border-success mb-3">
+        <div class="card-header">
+          Code
+        </div>
+        <div class="card-body">
+          <%= content_for :code %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="d-flex justify-content-center align-items-center">
+        <%= render inline: @lines.join %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+      <div class="card text-white bg-dark mb-3">
+        <div class="card-header">Usage Guidelines</div>
+        <div class="card-body">
+          <p class="card-text"><%= @frontmatter["usage"] %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

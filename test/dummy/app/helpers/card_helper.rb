@@ -1,6 +1,6 @@
 module CardHelper
-  def card(id: nil, add_class: "", &block)
-    content_tag(:div, nil, id: id, class: "card #{add_class}", &block)
+  def card(id: nil, add_class: "", add_styles: nil, &block)
+    content_tag(:div, nil, id: id, class: "card my-3 bg-white #{add_class}", style: add_styles, &block)
   end
 
   def standalone_card_header(id: nil, add_class: "", text: "")

@@ -10,20 +10,26 @@ module DesignSystem
       scss: Rouge::Lexers::Scss.new,
     }
 
-    def render_gist(language, source)
+    def render_formatted_code(language, source)
       FORMATTER.format LEXERS[language.to_sym].lex(source)
     end
 
-    def render_demo(demo)
-      render("/design_system/components/demo") { render demo }
-    end
-
-    def render_gists(*filepaths)
-      render "/design_system/components/gists", filepaths: filepaths, grouped_filepaths: filepaths.group_by { |filepath| language filepath }
+    def render_components(*filepaths)
+      render "/design_system/components/component", filepaths: filepaths, grouped_filepaths: filepaths.group_by { |filepath| language filepath }
     end
 
     def file_timestamps(filepaths = [])
       filepaths.map { |p| File.mtime(p).iso8601 }
+    end
+
+    def front_matter_parser(frontmatter)
+      @frontmatter = YAML.safe_load(frontmatter[0..-2].join)
+    end
+
+    def remove_frontmatter(lines)
+      return [] if lines.empty?
+      frontmatter = lines.first.strip == "---" ? lines.slice!(0, (lines[1..lines.size].index("---\n") + 3)) : []
+      front_matter_parser(frontmatter) unless frontmatter.empty?
     end
 
     def file_lines(filepath)
@@ -31,6 +37,7 @@ module DesignSystem
       lines.reject! { |line| line.to_s.strip =~ /\A(#|\/|\*|\<--)/ }
       lines.shift while lines.first.blank?
       lines.pop while lines.last.blank?
+      remove_frontmatter(lines)
       lines
     end
 
@@ -53,7 +60,5 @@ module DesignSystem
       when "ruby" then "Ruby"
       end
     end
-
-
   end
 end

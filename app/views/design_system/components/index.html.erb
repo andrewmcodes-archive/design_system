@@ -1,21 +1,10 @@
-<%= content_for :demo_title, "Basic Card" %>
-<%= content_for :demo_summary, "blah blah" %>
-
-
-<%#= content_for :demo_summary %>
-
-<div class="card mt-5">
-  <div class="card-header  text-center">
-    <h5 class="card-title">
-      <%= content_for :demo_title %>
-    </h5>
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1>Design system example</h1>
+    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+    <p>
+      <a href="#" class="btn btn-primary my-2">Main call to action</a>
+      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+    </p>
   </div>
-  <div class="card-body mx-auto">
-    <%= render_demo "/design_system/components/cards/demo" %>
-  </div>
-  <div class="card-footer text-left bg-white">
-    <%= render_gists(
-        "app/views/design_system/components/cards/_demo.html.erb"
-      ) %>
-  </div>
-</div>
+</section>

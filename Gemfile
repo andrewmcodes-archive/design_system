@@ -15,6 +15,7 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 group :test, :development do
+  gem "faker"
   gem "puma", "~> 4.3"
   gem "pry"
   gem "standard"
