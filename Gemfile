@@ -17,4 +17,5 @@ gemspec
 group :test, :development do
   gem "standard"
   gem "pry"
+  gem "webpacker", "~> 4.2.2"
 end
