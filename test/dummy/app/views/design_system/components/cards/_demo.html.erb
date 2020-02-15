@@ -1,0 +1,10 @@
+<%= card do %>
+  <%= card_image "https://via.placeholder.com/350x150", alt: "Card image cap" %>
+  <%= card_body do %>
+    <%= card_title "Card title" %>
+    <%= card_text do %>
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    <% end %>
+    <%= button path: "#", text: "Get started", size: :large, variant: :primary %>
+  <% end %>
+<% end %>

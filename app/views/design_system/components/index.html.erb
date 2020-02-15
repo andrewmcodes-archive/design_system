@@ -1,1 +1,21 @@
-Hello world
+<%= content_for :demo_title, "Basic Card" %>
+<%= content_for :demo_summary, "blah blah" %>
+
+
+<%#= content_for :demo_summary %>
+
+<div class="card mt-5">
+  <div class="card-header  text-center">
+    <h5 class="card-title">
+      <%= content_for :demo_title %>
+    </h5>
+  </div>
+  <div class="card-body mx-auto">
+    <%= render_demo "/design_system/components/cards/demo" %>
+  </div>
+  <div class="card-footer text-left bg-white">
+    <%= render_gists(
+        "app/views/design_system/components/cards/_demo.html.erb"
+      ) %>
+  </div>
+</div>

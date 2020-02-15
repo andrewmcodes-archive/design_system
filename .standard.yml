@@ -1,0 +1,13 @@
+parallel: true
+format: progress
+default_ignores: false  # default: true
+
+ignore:
+  - "Gemfile.lock"
+  - ".git/**/*"
+  - "test/dummy/.git/**/*"
+  - "test/dummy/node_modules/**/*"
+  - "test/dummy/vendor/**/*"
+  - "test/dummy/bin/*"
+  - "test/dummy/db/schema.rb"
+  - "test/dummy/tmp/**/*"

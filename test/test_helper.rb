@@ -15,4 +15,4 @@ Minitest.backtrace_filter = Minitest::BacktraceFilter.new
 #   ActionDispatch::IntegrationTest.fixture_path = ActiveSupport::TestCase.fixture_path
 #   ActiveSupport::TestCase.file_fixture_path = ActiveSupport::TestCase.fixture_path + "/files"
 #   ActiveSupport::TestCase.fixtures :all
-end
+# end

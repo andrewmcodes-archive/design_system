@@ -1,5 +1,5 @@
 require "design_system/engine"
+require 'rouge'
 
 module DesignSystem
-  # Your code goes here...
 end

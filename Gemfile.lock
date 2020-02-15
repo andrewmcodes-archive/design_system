@@ -3,6 +3,7 @@ PATH
   specs:
     design_system (0.1.0)
       rails (~> 6.0.2, >= 6.0.2.1)
+      rouge (>= 3, < 4)
 
 GEM
   remote: https://rubygems.org/
@@ -129,6 +130,7 @@ GEM
       thor (>= 0.20.3, < 2.0)
     rainbow (3.0.0)
     rake (13.0.1)
+    rouge (3.16.0)
     rubocop (0.77.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
