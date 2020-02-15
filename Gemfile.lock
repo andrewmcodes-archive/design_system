@@ -3,6 +3,7 @@ PATH
   specs:
     design_system (0.1.0)
       rails (~> 6.0.2, >= 6.0.2.1)
+      rouge (>= 3, < 4)
 
 GEM
   remote: https://rubygems.org/
@@ -68,6 +69,8 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.6)
     erubi (1.9.0)
+    faker (2.10.1)
+      i18n (>= 1.6, < 2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)
@@ -94,7 +97,11 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    puma (4.3.1)
+      nio4r (~> 2.0)
     rack (2.1.2)
+    rack-proxy (0.6.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.2.1)
@@ -125,6 +132,7 @@ GEM
       thor (>= 0.20.3, < 2.0)
     rainbow (3.0.0)
     rake (13.0.1)
+    rouge (3.16.0)
     rubocop (0.77.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -148,9 +156,16 @@ GEM
       rubocop-performance (~> 1.5.1)
     thor (1.0.1)
     thread_safe (0.3.6)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.1)
+    webpacker (4.2.2)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -161,9 +176,13 @@ PLATFORMS
 
 DEPENDENCIES
   design_system!
+  faker
   pry
+  puma (~> 4.3)
   sqlite3
   standard
+  turbolinks (~> 5)
+  webpacker (~> 4.2.2)
 
 BUNDLED WITH
    2.1.4

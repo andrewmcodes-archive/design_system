@@ -1,0 +1,11 @@
+<nav class="col-md-2 d-none d-md-block bg-white sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <% component_names.each do |name| %>
+        <li class="nav-item">
+          <%= link_to name.titleize, component_path(name), class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

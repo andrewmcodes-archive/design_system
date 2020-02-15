@@ -1,0 +1,27 @@
+---
+title: "Table"
+summary: "Table summary"
+usage:
+  Data tables display information in a grid-like format of rows and columns. They organize information in a way that’s easy to scan, so that users can look for patterns and insights. Data tables can contain Interactive components (such as chips, buttons, or menus) Non-interactive elements (such as badges) Tools to query and manipulate data
+---
+
+<%= table do %>
+  <%= table_head do %>
+    <%= table_row header: true do %>
+      <%= table_column {"Job"} %>
+      <%= table_column {"City"} %>
+      <%= table_column {"State"} %>
+      <%= table_column(add_class: "text-right") {"Salary"} %>
+    <% end %>
+  <% end %>
+  <%= table_body do %>
+    <% 9.times do %>
+      <%= table_row do %>
+        <%= table_data_value Faker::Job.title %>
+        <%= table_data_value Faker::Address.city %>
+        <%= table_data_value Faker::Address.state_abbr %>
+        <%= table_data_value number_to_currency(Faker::Commerce.price), add_class: "text-right" %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
